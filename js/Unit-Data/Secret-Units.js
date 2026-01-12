@@ -6,6 +6,16 @@
 //     obtainment: "Banner",
 //     placement: "hill / ground",
 //     update: "1.0, 1.1...",
+//     // ======== OPTIONAL ======
+//     //statsEffects: [
+//             // =========== ADD AS =========== 
+//             // {
+//                  // name: "",
+//                  // icon: "file path",
+//                  // description: "description"
+//                  //   },
+//             // Can add as many as you needed (seperate like {}, {})
+//     //],
 //     imageIcon: "file path",
 //     image: "file path",
 //     // ======== OPTIONAL ======
@@ -26,6 +36,7 @@
 //             Gold: "50000"
 //         }
 //     },
+//     // ---------------------------------------- Normal Unit -------------------------------------------------
 //     upgrades: {
 //         // =========== ADD AS =========== 
 //         // < 1: { cost: "", damage: "", range: "", cooldown: "", aoe: "", attackType: "Ground / Hyrbid" } >
@@ -34,6 +45,15 @@
 //         2: { cost: 400, damage: 300, range: 4, cooldown: 1.8, aoe: "Single Target", attackType: "Ground" },
 //         3: { cost: 800, damage: 600, range: 5, cooldown: 1.5, aoe: "Cone", attackType: "Ground" }  
 //     },
+//
+//     // ---------------------------------------- Farm Unit ----------------------------------------------------
+//     // CLass MUST be bishop
+//     // Add <farm: true>
+//     //upgrades: {
+//     // =========== ADD AS =========== 
+//     // < 1: { cost: "", money: "" } >
+//     },
+//
 //     // ======== OPTIONAL ======
 //     // Can add just one of two if unit only has passive or only has ability
 //     // Can add multiple items to both passive and ability
@@ -89,6 +109,6 @@ unitsData.push(
                 passiveImage: "Images/Units/frost_moon_icon.png"
             }
         ],
-        ability: [] 
+        ability: []
     }
 );

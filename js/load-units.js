@@ -399,6 +399,9 @@ function showUnitInfo(unit) {
             evolutionHTML += `</div></div>`;
             hasEvolution = true;
         }
+        
+        // Check if this is a money unit (bishop class with farm property)
+        const isMoneyUnit = unit.class === 'Bishop' && unit.farm === true;
 
         // Build upgrades table
         let upgradesHTML = '';
@@ -409,31 +412,60 @@ function showUnitInfo(unit) {
                     <table class="upgrades-table">
                         <thead>
                             <tr>
-                                <th>Level</th>
+            `;
+            
+            if (isMoneyUnit) {
+                // Money unit header
+                upgradesHTML += `
+                                <th>Upgrade</th>
+                                <th>Cost</th>
+                                <th>Money</th>
+                `;
+            } else {
+                // Standard unit header
+                upgradesHTML += `
+                                <th>Upgrade</th>
                                 <th>Cost</th>
                                 <th>Damage</th>
                                 <th>Range</th>
                                 <th>Cooldown</th>
                                 <th>AOE</th>
                                 <th>Attack Type</th>
+                `;
+            }
+            
+            upgradesHTML += `
                             </tr>
                         </thead>
                         <tbody>
             `;
             
-            Object.keys(unit.upgrades).forEach(level => {
-                const upgrade = unit.upgrades[level];
-                upgradesHTML += `
-                    <tr>
-                        <td>${level}</td>
-                        <td>${upgrade.cost}</td>
-                        <td>${upgrade.damage}</td>
-                        <td>${upgrade.range}</td>
-                        <td>${upgrade.cooldown}s</td>
-                        <td>${upgrade.aoe}</td>
-                        <td>${upgrade.attackType}</td>
-                    </tr>
-                `;
+            Object.keys(unit.upgrades).forEach(Upgrade => {
+                const upgrade = unit.upgrades[Upgrade];
+                
+                if (isMoneyUnit) {
+                    // Money unit row
+                    upgradesHTML += `
+                        <tr>
+                            <td>${Upgrade}</td>
+                            <td>${upgrade.cost}</td>
+                            <td>${upgrade.money || 'N/A'}</td>
+                        </tr>
+                    `;
+                } else {
+                    // Standard unit row
+                    upgradesHTML += `
+                        <tr>
+                            <td>${Upgrade}</td>
+                            <td>${upgrade.cost}</td>
+                            <td>${upgrade.damage}</td>
+                            <td>${upgrade.range}</td>
+                            <td>${upgrade.cooldown}s</td>
+                            <td>${upgrade.aoe}</td>
+                            <td>${upgrade.attackType}</td>
+                        </tr>
+                    `;
+                }
             });
             
             upgradesHTML += `
@@ -505,20 +537,46 @@ function showUnitInfo(unit) {
             }
         }
         
+        // Build stats effects HTML
+        let statsEffectsHTML = '';
+        if (unit.statsEffects && unit.statsEffects.length > 0) {
+            statsEffectsHTML = '<div class="stats-effects">';
+            unit.statsEffects.forEach((effect) => {
+                statsEffectsHTML += `
+                    <div class="stats-effect-icon">
+                        <img src="${effect.icon}" alt="${effect.name}">
+                        <div class="stats-effect-tooltip">
+                            <img src="${effect.icon}" alt="${effect.name}" class="tooltip-icon">
+                            <div class="tooltip-text">
+                                <strong>${effect.name}</strong>
+                                <p>${effect.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            statsEffectsHTML += '</div>';
+        }
+        
         infoContent.innerHTML = `
             <div class="unit-details">
-                <img src="${unit.image}" alt="${unit.name}" class="info-image unit-info-element">
-                <div class="unit-title unit-info-element">${unit.name}</div>
-                <div class="unit-stats unit-info-element">
-                    <p><strong>Rarity:</strong> ${unit.rarity}</p>
-                    <p><strong>Class:</strong> ${unit.class}</p>
-                    <p><strong>Placement:</strong> ${unit.placement}</p>
-                    <p><strong>Update:</strong> ${unit.update}</p>
-                </div>
-                ${evolutionHTML}
-                ${upgradesHTML}
-                ${passivesHTML}
-                ${abilitiesHTML}
+                
+                    <img src="${unit.image}" alt="${unit.name}" class="info-image unit-info-element">
+                    <div class="unit-title unit-info-element">${unit.name}</div>
+                    <div class="unit-stats unit-info-element">
+                        <div class="scroll-area">
+                            <p><strong>Rarity:</strong> ${unit.rarity}</p>
+                            <p><strong>Class:</strong> ${unit.class}</p>
+                            <p><strong>Obtainnment:</strong> ${unit.obtainment}</p>
+                            <p><strong>Placement:</strong> ${unit.placement}</p>
+                            <p><strong>Update:</strong> ${unit.update}</p>
+                        </div>
+                        ${statsEffectsHTML}
+                    </div>
+                    ${evolutionHTML}
+                    ${upgradesHTML}
+                    ${passivesHTML}
+                    ${abilitiesHTML}
             </div>
         `;
         
@@ -581,7 +639,6 @@ function showUnitInfo(unit) {
             abilitiesSection.style.gridArea = 'abilities';
             abilitiesSection.classList.add('unit-info-element');
         }
-        
         infoContent.scrollTop = 0;
     };
     

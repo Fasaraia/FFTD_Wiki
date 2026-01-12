@@ -105,48 +105,48 @@
 
 /* Stats below title */
 .unit-stats {
-    grid-column: 2 / 4; grid-row: 2 ; background: var(--scroll-track); padding: 0.7vw; border-radius: 0.4vw; 
-    max-height: 17vh; border-left: 0.3vw solid var(--card-border); display: flex; flex-direction: column; justify-content: center;
+    grid-column: 2 / 4; grid-row: 2 ; background: var(--scroll-track); padding: 0.7vw; border-radius: 0.4vw; position: relative; z-index: 100;
+    max-height: 20vh; border-left: 0.3vw solid var(--card-border); display: flex; flex-direction: column; 
 }
-.unit-stats p { margin: 0.1vh 0 0 0; font-size: clamp(1.6vh, 1.6vh, 1.6vh); color: var(--text-primary); }
+.unit-stats p { margin: 0.1vh 0 0 0; font-size:clamp(0.8vh, 1.6vh, 2.2vh); color: var(--text-primary); }
 .unit-stats strong { color: var(--text-third); }
+
+/* Custom scrollbar for evolution list */
+.unit-stats .scroll-area::-webkit-scrollbar { width: 0.4vw; }
+.unit-stats .scroll-area::-webkit-scrollbar-track {background: var(--bg-color);border-radius: 1vw; }
+.unit-stats .scroll-area::-webkit-scrollbar-thumb {background: var(--card-border); border-radius: 1vw;}
+
+.stats-effects { display: flex; gap: 0.2vw; margin-top: 0.8vh; flex-wrap: wrap;}
+
+.stats-effect-icon { position: relative; width: 2.5vw; height: 2.5vw; cursor: pointer; transition: transform 0.2s ease;}
+.stats-effect-icon:hover { transform: scale(1.1); z-index: 10;}
+.stats-effect-icon > img { width: 100%; height: 100%; object-fit: contain; border-radius: 0.3vw; border: 0.15vw solid var(--card-border); background: var(--background-primary); }
+
+.stats-effect-tooltip {
+    position: absolute; bottom: calc(100% + 1vh); left: 50%; transform: translateX(-50%); background: var(--bg-color); border: 0.15vw solid var(--card-border); 
+    border-radius: 0.4vw; padding: 0.8vw; width: max-content; max-width: 18vw; opacity: 0; visibility: hidden; pointer-events: none; 
+    transition: opacity 0.2s ease, visibility 0.2s ease; z-index: 11; display: flex; align-items: flex-start; gap: 0.8vw;
+}
+.stats-effect-icon:hover .stats-effect-tooltip { opacity: 1; visibility: visible; pointer-events: auto;}
+.stats-effect-tooltip::after { content: ''; position: absolute; top: 100%; left: 50%;transform: translateX(-50%); border: 0.5vw solid transparent;border-top-color: var(--card-border);}
+
+.tooltip-icon { width: 3vw; height: 3vw; flex-shrink: 0; object-fit: contain; border-radius: 0.3vw; background: var(--bg-color);}
+
+.tooltip-text { text-align: left; flex: 1;}
+.tooltip-text strong { display: block; color: var(--text-third); font-size: clamp(0.9vh, 1.4vh, 1.8vh); margin-bottom: 0.4vh;}
+.tooltip-text p { color: var(--text-primary); font-size: clamp(0.8vh, 1.2vh, 1.6vh); margin: 0; line-height: 1.4;}
 
 /* Evolution Section - Spans full width */
 .evolution-section {
     grid-column: 4 / 5; grid-row: 1 / 3; background: var(--scroll-track); max-height: 25vh; padding: 1vw; border-radius: 0.4vw; 
-    border: 0.2vw solid var(--card-border); display: flex; flex-direction: column; overflow: hidden;
+    border: 0.2vw solid var(--card-border); display: flex; flex-direction: column; overflow: hidden; width: fit-content;
 }
 
-.evolution-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1vh;
-    border-bottom: 0.1vw solid var(--card-border);
-    padding-bottom: 1vh;
-}
+.evolution-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1vh; border-bottom: 0.1vw solid var(--card-border);padding-bottom: 1vh; }
+.evolution-section h4 { font-size: clamp(1.6vw, 1.6vw, 1.6vw); color: var(--text-secondary); margin-bottom: 0.5vw; text-transform: uppercase; padding-bottom: 0.1vw; }
 
-.evolution-section h4 {
-    font-size: clamp(1.6vw, 1.6vw, 1.6vw);
-    color: var(--text-secondary);
-    margin-bottom: 0.5vw;
-    text-transform: uppercase;
-    padding-bottom: 0.1vw;
-}
-
-.evolution-unit-image {
-    width: 3vw;
-    height: 3vw;
-    object-fit: cover;
-    border-radius: 0.3vw;
-    background: var(--bg-color);
-    transition: all 0.3s ease;
-}
-
-.evolution-unit-image.clickable:hover {
-    transform: scale(1.1);
-    border-color: var(--text-third);
-}
+.evolution-unit-image { width: 3vw; height: 3vw; object-fit: cover; border-radius: 0.3vw; background: var(--bg-color); transition: all 0.3s ease; }
+.evolution-unit-image.clickable:hover { transform: scale(1.1); border-color: var(--text-third); }
 
 .evolution-list { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5vh; overflow-y: auto; padding-right: 0.8vw; }
 
@@ -174,7 +174,7 @@
 .upgrades-section h4 { font-size: clamp(1.2vw, 1.2vw, 1.2vw); color: var(--text-third); margin-bottom: 1vh; text-transform: uppercase; }
 
 /* Upgrades Table - Colour Theme + Style */
-.upgrades-table { width: 30.5vw; border-collapse: collapse; background: var(--bg-color); border-radius: 0.6vw; overflow: hidden; }
+.upgrades-table { width: 30.5vw; justify-self: center; border-collapse: collapse; background: var(--bg-color); border-radius: 0.6vw; overflow: hidden; }
 .upgrades-table thead { background: var(--card-border); color: var(--bg-color); }
 .upgrades-table th { padding: 0.6vw 1vh; font-weight: bold; text-align: center; font-size: clamp(0.8vw, 0.8vw, 0.8vw); }
 .upgrades-table td { padding: 0.4vw 0.1vh; text-align: center; border-bottom: 0.1vh solid var(--card-border); color: var(--text-primary); font-size: clamp(0.8vw, 0.8vw, 0.8vw); }

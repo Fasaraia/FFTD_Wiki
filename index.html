@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>FFTD WIki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/main-page.css">
+    <link rel="stylesheet" href="style/unit-page.css">
+    <link rel="stylesheet" href="style/item-page.css">
+    <link rel="stylesheet" href="style/misc-page.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="js/load-page.js"></script>
+    <script src="js/load-units.js"></script>
+</head>
+
+<body>
+    <div class="bg-design"></div>
+    <a class="logo" onclick="loadPage('html/main.html')"><img class="logo-img" src="Images/Logo.png" alt="FFTD Wiki Logo"></a>
+    <div class="main-page">
+        <div class="nav">
+            <img src="/Images/Nav/Units_Button.png" onclick="loadPage('html/units-page.html')" alt="Units">
+            <img src="/Images/Nav/Gamemodes_Button.png" onclick="loadPage('html/gamemodes-page.html')" alt="Gamemode">
+            <img src="/Images/Nav/Items_Button.png" onclick="loadPage('html/items-page.html')" alt="Items">
+            <img src="/Images/Nav/Misc_Button.png" onclick="loadPage('html/misc-page.html')" alt="Misc">
+        </div>
+        <div class="content" id="content">
+        </div>
+    </div>
+</body>
+</html>

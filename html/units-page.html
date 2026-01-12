@@ -1,0 +1,88 @@
+<div class="units-page">
+    <!-- Filter Section -->
+    <div class="filter-box" id="content-box">
+        <div class="title">Filter</div>
+        <span class="break"></span>
+        <div class="scroll-area">
+            <!-- Rarity Filter -->
+            <div class="filter-section">
+                <div class="filter-label">Rarity</div>
+                <div class="filter-buttons">
+                    <label class="filter-btn">
+                        <input type="checkbox" class="secret" id="filter-secret" onchange="loadUnits(unitsData, getCurrentFilters())"> Secret
+                    </label>
+                    <label class="filter-btn">
+                        <input type="checkbox" class="grade5" id="filter-grade5" onchange="loadUnits(unitsData, getCurrentFilters())"> Grade 5
+                    </label>
+                    <label class="filter-btn">
+                        <input type="checkbox" class="grade4" id="filter-grade4" onchange="loadUnits(unitsData, getCurrentFilters())"> Grade 4
+                    </label>
+                    <label class="filter-btn">
+                        <input type="checkbox" class="grade3"id="filter-grade3" onchange="loadUnits(unitsData, getCurrentFilters())" > Grade 3
+                    </label>
+                </div>
+            </div>
+
+            <!-- Class Filter -->
+            <div class="filter-section">
+                <div class="filter-label">Class</div>
+                <div class="filter-buttons">
+                    <label class="filter-btn">
+                        <input type="checkbox" class="paladin" id="filter-paladin" onchange="loadUnits(unitsData, getCurrentFilters())"> Paladin
+                    </label>
+                    <label class="filter-btn">
+                        <input type="checkbox" class="magician" id="filter-magician" onchange="loadUnits(unitsData, getCurrentFilters())"> Magician
+                    </label>
+                    <label class="filter-btn">
+                        <input type="checkbox" class="bishop" id="filter-bishop" onchange="loadUnits(unitsData, getCurrentFilters())"> Bishop
+                    </label>
+                </div>
+            </div>
+
+            <!-- Update Filter -->
+            <div class="filter-section">
+                <div class="filter-label">Update</div>
+                <select id="update-select" class="update-dropdown" onchange="loadUnits(unitsData, getCurrentFilters())">
+                    <option value="all">All Updates</option>
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </div>
+
+            <!-- Placement Filter -->
+            <div class="filter-section">
+                <div class="filter-label">Placement</div>
+                <div class="filter-buttons">
+                    <label class="filter-btn">
+                        <input type="checkbox" class="ground" id="filter-ground" onchange="loadUnits(unitsData, getCurrentFilters())"> Ground
+                    </label>
+                    <label class="filter-btn">
+                        <input type="checkbox" class="hill" id="filter-hill" onchange="loadUnits(unitsData, getCurrentFilters())"> Hill
+                    </label>
+                </div>
+            </div>
+
+            <!-- Reset Button -->
+            <button class="reset-btn" onclick="resetFilters()">Reset</button>
+        </div>
+    </div>
+
+    <!-- Units Display Section -->
+    <div class="units-display" id="content-box">
+        <div class="title">Units</div>
+        <span class="break"></span>
+        <div class="scroll-area">
+            <!-- Generate Content with js -->
+        </div>
+    </div>
+
+    <!-- Unit Info Section -->
+    <div class="unit-info" id="content-box">
+        <div class="title">Unit Info</div>
+        <span class="break"></span>
+        <div class="scroll-area">
+            <div class="info-content">
+            </div>
+        </div>
+    </div>
+</div>
+

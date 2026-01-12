@@ -1,0 +1,51 @@
+/* Base CSS Variables */
+:root {
+  --bg-dark: #16061A;
+	--bg-color: #FFCF77;
+  --main-page: #FFEBB3;
+  --card-border: #7C4200;
+  --text-primary: var(--card-border);
+  --text-secondary: #775700;
+   --text-third: #5e4500;
+  --scroll-track: #BE893C;
+  --scroll-thumb: var(--card-border);
+  --font-main: 'Fredoka', sans-serif;
+  --font-jp: 'Noto Sans JP', sans-serif;
+}
+
+/* Base Styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* A & Body Styles */
+a {text-decoration: none;}
+body { background-color: var(--bg-dark); }
+
+/* Background Design */
+.bg-design {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-color: var(--bg-dark); background-size: 50px 50px, 50px 50px, 100% 100%, 100% 100%;
+
+  background-image: 
+  repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(219, 184, 243, 0.04) 50px), 
+  repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(219, 184, 243, 0.04) 50px);
+}
+
+/* Main Page Container */
+.main-page { 
+	justify-self: center; background-color: var(--main-page); width: 75vw; padding: 1.5vh 0 1.5vh 0;
+	height: fit-content; border-radius: 1vw; border: var(--card-border) solid 0.4vw; transition: all 0.4s ease;
+}
+
+/* Logo */
+.logo { display: flex; justify-content: center; }
+.logo-img { width: 30vw; height: auto; transition: all 0.4s ease;}
+
+/* Navigation Icons */
+.nav { display: flex; justify-content: center; padding: 0.5vh 0 0.5vh 0; }
+.nav img { width: 12vw; height: auto; margin: 0 1vw; cursor: pointer; transition: transform 0.5s ease, filter 0.5s ease; transition: all 0.4s ease; }
+.nav img:hover { transform: scale(1.05); filter: drop-shadow(0 0 1vw #000); }
+
+/* Global Scroll Area Styles */
+.scroll-area {overflow-y: auto; overflow-x: hidden; }
+.scroll-area::-webkit-scrollbar { width: 0.6vw; }
+.scroll-area::-webkit-scrollbar-track { background: var(--scroll-track); border-radius: 1vh; }
+.scroll-area::-webkit-scrollbar-thumb { background-color: var(--card-border); border-radius: 1vh;}

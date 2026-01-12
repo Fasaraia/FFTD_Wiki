@@ -1,0 +1,33 @@
+/* Main Page Grid Layout */
+.main-grid {  
+    display: grid; padding: 1vh 1vw; gap: 1vw 0; justify-content: space-around;
+	grid-template-areas:
+    'Change-Log Pop-Pages'
+    'Change-Log Credits';
+}
+
+/* Content Boxes */
+.pop-pages, .credits, .change-log { 
+    width: 30vw; border: 0.6vh solid var(--card-border); border-radius: 2vh; background-color: var(--bg-color); padding: 1vw; 
+    transition: all 0.4s ease;}
+
+/* Content Box Titles & Breaks */
+.change-log .title, .pop-pages .title, .credits .title { font-family: var(--font-jp); font-size: 2.5vh; color: var(--text-primary); text-align: center; margin-bottom: 1vh; }
+.change-log .break, .pop-pages .break, .credits .break { display: block; width: 100%; height: 0.3vh; background-color: var(--card-border); margin-bottom: 1vh; }
+
+/* Change Log Specific */
+.change-log { grid-area: Change-Log; width: 40vw; max-height:55vh; display: flex; flex-direction: column; overflow: hidden; }
+.change-log span { font-family: var(--font-main); font-size: 2vh; color: var(--text-secondary); line-height: 3vh; }
+
+/* Popular Pages Specific */
+.pop-pages { grid-area: Pop-Pages; height: 27vh; display: flex; flex-direction: column; overflow: hidden; }
+.pop-pages ul { list-style-type: disc; padding-left: 1vw; }
+.pop-pages li { font-family: var(--font-main); font-size: 2vh; color: var(--text-secondary); line-height: 3vh; margin-bottom: 1vh; transition: all 0.4s ease-in-out;}
+.pop-pages li:hover { cursor: pointer; transform: translateX(1vw); }
+.pop-pages a { text-decoration: none; color: var(--text-secondary); }
+
+/* Credits Specific */
+.credits { grid-area: Credits; height:25vh; display: flex; flex-direction: column; overflow: hidden; }
+.credits .sub-title { font-family: var(--font-main); font-size: 2vh; color: var(--text-primary); text-align: center; margin-bottom: 1vh; }
+.credits .semi-break { display: block; width: 50%; height: 0.2vh; background-color: var(--card-border); }
+.credits span { font-family: var(--font-main); font-size: 2vh; color: var(--text-secondary); line-height: 3vh; }

@@ -16,14 +16,17 @@ const journeyMode = {
                     {
                         Name: "Item 1",
                         Image: "file path",
+                        Difficulty: "hard+"
                     },
                     {
                         Name: "Item 1",
                         Image: "file path",
+                        Difficulty: "medium+"
                     },
                     {
                         Name: "Item 1",
                         Image: "file path",
+                        Difficulty: "hardcore"
                     },
                     {
                         Name: "Item 1",
@@ -62,6 +65,7 @@ const journeyMode = {
                     {
                         Name: "Item 1",
                         Image: "file path",
+                        Difficulty: "hard+"
                     },
                     {
                         Name: "Item 1",

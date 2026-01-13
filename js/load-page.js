@@ -14,6 +14,9 @@ function loadPage(page) {
             if (page.includes('units-page.html')) {
                 loadAllUnitData();
             }
+            else if (page.includes('gamemodes-page.html')){
+                initGameModesPage();
+            }
         })
         .catch(error => {
             console.error('Load error:', error);

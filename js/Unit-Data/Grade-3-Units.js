@@ -70,6 +70,18 @@ unitsData.push(
         update: "1.0",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
+        evolution: {
+            evolvedImage: "./Images/Units/frost_moon_icon.png",
+            evolvedUnitName: "Mustache (Fort)",
+            tasks: {
+                Task1: "Take down 465 enemies with Mustache in Clown Island",
+                Task2: "Complete 5 winning matches in Clown Island",
+                Task3: "Complete 5 winning matches in Clown Island accompanied by Ruffy"
+            },
+            resources: {
+                Crystals: "1000"
+            }
+        },
         upgrades: {
             1: { cost: 50, damage: 15, range: 10, cooldown: 4, aoe: "Single Target", attackType: "Ground"},
             2: { cost: 150, damage: 30, range: 12, cooldown: 5, aoe: "Single Target", attackType: "Ground"},

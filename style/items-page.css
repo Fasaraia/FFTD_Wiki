@@ -1,0 +1,223 @@
+/* Items Page */
+.items-page {
+    border: 0.6vh solid var(--card-border);
+    border-radius: 2vh;
+    background-color: var(--bg-color);
+    padding: 1vw;
+    max-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.items-page .title {
+    font-family: var(--font-jp);
+    font-size: 2.5vh;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 1vh;
+}
+
+.items-page .break {
+    display: block;
+    width: 100%;
+    height: 0.3vh;
+    background-color: var(--card-border);
+    margin-bottom: 1vh;
+}
+
+/* Items Content Area */
+.items-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+/* Custom scrollbar */
+.items-content::-webkit-scrollbar {
+    width: 0.6vw;
+}
+
+.items-content::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+    border-radius: 1vw;
+}
+
+.items-content::-webkit-scrollbar-thumb {
+    background: var(--card-border);
+    border-radius: 1vw;
+}
+
+/* Item Type Section */
+.item-type-section {
+    background: var(--scroll-track);
+    border: 0.3vh solid var(--card-border);
+    border-radius: 1vh;
+    padding: 1.5vw;
+}
+
+.item-type-title {
+    font-family: var(--font-main);
+    font-size: 2.2vh;
+    color: var(--text-third);
+    font-weight: bold;
+    margin-bottom: 1.5vh;
+    padding-bottom: 0.5vh;
+    border-bottom: 0.2vh solid var(--card-border);
+}
+
+/* Items Grid */
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1vw;
+    background: var(--card-border);
+    padding: 1.5vw;
+    border-radius: 1vh;
+}
+
+/* Individual Item Card */
+.item-card {
+    position: relative;
+    aspect-ratio: 1;
+    background: var(--bg-color);
+    border: 0.3vh solid var(--scroll-track);
+    width: 7vw;
+    border-radius: 0.8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8vw 0 0.8vw 0px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-0.5vh);
+    border-color: var(--text-third);
+    z-index: 100;
+}
+
+.item-image {
+    width: 5vw;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 0.5vh;
+    background: var(--scroll-track);
+}
+
+.item-name {
+    font-family: var(--font-main);
+    font-size: clamp(0.8vw, 1vw, 1.2vw);
+    color: var(--text-primary);
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Item Tooltip */
+.item-tooltip {
+    position: absolute;
+    bottom: calc(100% + 1vh);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-color);
+    border: 0.2vw solid var(--card-border);
+    border-radius: 0.8vh;
+    padding: 1vw;
+    min-width: 15vw;
+    max-width: 25vw;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 1000;
+    box-shadow: 0 0.5vh 1.5vh rgba(0, 0, 0, 0.4);
+}
+
+.item-card:hover .item-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.item-card:nth-child(-n+8) .item-tooltip {
+    bottom: auto;
+    top: calc(100% + 1vh);
+}
+
+.item-card:nth-child(-n+8) .item-tooltip::after {
+    top: auto;
+    bottom: 100%;
+    border-top-color: transparent;
+    border-bottom-color: var(--card-border);
+}
+
+.item-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 0.6vw solid transparent;
+    border-top-color: var(--card-border);
+}
+
+.tooltip-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+    margin-bottom: 1vh;
+    padding-bottom: 0.8vh;
+    border-bottom: 0.15vw solid var(--card-border);
+}
+
+.tooltip-icon {
+    width: 3vw;
+    height: 3vw;
+    object-fit: contain;
+    background: var(--scroll-track);
+    border-radius: 0.4vh;
+    padding: 0.3vw;
+}
+
+.tooltip-name {
+    font-family: var(--font-main);
+    font-size: 1.6vh;
+    color: var(--text-third);
+    font-weight: bold;
+}
+
+.tooltip-section {
+    margin-bottom: 1vh;
+}
+
+.tooltip-section:last-child {
+    margin-bottom: 0;
+}
+
+.tooltip-label {
+    font-family: var(--font-main);
+    font-size: 1.3vh;
+    color: var(--text-third);
+    font-weight: bold;
+    margin-bottom: 0.3vh;
+}
+
+.tooltip-text {
+    font-family: var(--font-main);
+    font-size: 1.2vh;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.tooltip-text ul {
+    margin: 0;
+    padding-left: 1.5vw;
+}
+
+.tooltip-text li {
+    margin-bottom: 0.2vh;
+}

@@ -17,6 +17,9 @@ function loadPage(page) {
             else if (page.includes('gamemodes-page.html')){
                 initGameModesPage();
             }
+            else if (page.includes('items-page.html')){
+                initItemsPage();
+            }
         })
         .catch(error => {
             console.error('Load error:', error);

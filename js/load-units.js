@@ -2,6 +2,7 @@
 let unitsData = [];
 let infoOpen = false;
 let scriptsLoaded = false;
+let currentUnit = null; // Store the current unit being displayed
 
 // Function to load all unit data files
 async function loadAllUnitData() {
@@ -51,6 +52,93 @@ function loadScript(src) {
 
 function unitsCleanup() {
     infoOpen = false;
+    currentUnit = null;
+}
+
+// Function to update unit level display
+function updateUnitLevel() {
+    if (!currentUnit) return;
+    
+    const levelRadio = document.querySelector('input[name="unit-level"]:checked');
+    const level = levelRadio ? levelRadio.value : '1';
+    
+    // Get damage multiplier based on rarity
+    let damageMultiplier = 1;
+    if (level === '50') {
+        switch(currentUnit.rarity) {
+            case 'Secret':
+            case 'Grade 5':
+                damageMultiplier = 3.5;
+                break;
+            case 'Grade 4':
+                damageMultiplier = 3.52;
+                break;
+            case 'Grade 3':
+                damageMultiplier = 3.53;
+                break;
+        }
+    }
+    
+    // Only update the upgrades table body
+    updateUpgradesTable(currentUnit, damageMultiplier);
+}
+
+// Function to update only the upgrades table body
+function updateUpgradesTable(unit, damageMultiplier) {
+    const upgradesTable = document.querySelector('.upgrades-table');
+    if (!upgradesTable) return;
+    
+    const tbody = upgradesTable.querySelector('tbody');
+    if (!tbody) return;
+    
+    const isMoneyUnit = unit.class === 'Bishop' && unit.farm === true;
+    
+    // Build table body HTML
+    let tableBodyHTML = '';
+    
+    Object.keys(unit.upgrades).forEach(Upgrade => {
+        const upgrade = unit.upgrades[Upgrade];
+        
+        if (isMoneyUnit) {
+            tableBodyHTML += `
+                <tr>
+                    <td>${Upgrade}</td>
+                    <td>${upgrade.cost}</td>
+                    <td>${upgrade.money || 'N/A'}</td>
+                </tr>
+            `;
+        } else {
+            const adjustedDamage = upgrade.damage * damageMultiplier;
+            tableBodyHTML += `
+                <tr>
+                    <td>${Upgrade}</td>
+                    <td>${upgrade.cost}</td>
+                    <td>${adjustedDamage}</td>
+                    <td>${upgrade.range}</td>
+                    <td>${upgrade.cooldown}s</td>
+                    <td>${upgrade.aoe}</td>
+                    <td>${upgrade.attackType}</td>
+                </tr>
+            `;
+        }
+    });
+    
+    // Animate only the table body
+    anime({
+        targets: tbody,
+        opacity: [1, 0],
+        duration: 150,
+        easing: 'linear',
+        complete: () => {
+            tbody.innerHTML = tableBodyHTML;
+            anime({
+                targets: tbody,
+                opacity: [0, 1],
+                duration: 200,
+                easing: 'linear'
+            });
+        }
+    });
 }
 
 // Function to close unit info panel
@@ -62,7 +150,8 @@ function closeUnitInfo() {
     
     if (!infoOpen) return;
 
-   const elements = infoContent.querySelectorAll('.unit-info-element');
+    // Fade out elements first
+    const elements = infoContent.querySelectorAll('.unit-info-element');
     anime({
         targets: elements,
         opacity: {
@@ -82,7 +171,7 @@ function closeUnitInfo() {
                     targets: unitInfo,
                     opacity: [1, 0],
                     translateY: [0, 10],
-                    duration: 500,
+                    duration: 300,
                     easing: 'easeInCubic',
                     complete: () => {
                         if (unitsDisplay) {
@@ -395,7 +484,7 @@ function createUnitCard(unit) {
     return card;
 }
 
-function showUnitInfo(unit) {
+function showUnitInfo(unit, damageMultiplier = 1) {
     const infoContent = document.querySelector('.unit-info .info-content');
     const unitsPage = document.querySelector('.units-page');
     const unitInfo = document.querySelector('.unit-info');
@@ -405,6 +494,9 @@ function showUnitInfo(unit) {
         console.error('Info content element not found');
         return;
     }
+    
+    // Store the current unit
+    currentUnit = unit;
     
     // Add class to trigger layout change
     if (unitsPage) {
@@ -467,7 +559,19 @@ function showUnitInfo(unit) {
         if (unit.upgrades) {
             upgradesHTML = `
                 <div class="upgrades-section">
-                    <h4>Upgrades</h4>
+                    <div class="upgrades-header">
+                        <h4>Upgrades</h4>
+                        <div class="level-selector">
+                            <label class="level-btn">
+                                <input type="radio" name="unit-level" value="1" ${damageMultiplier === 1 ? 'checked' : ''} onchange="updateUnitLevel()">
+                                Level 1
+                            </label>
+                            <label class="level-btn">
+                                <input type="radio" name="unit-level" value="50" ${damageMultiplier !== 1 ? 'checked' : ''} onchange="updateUnitLevel()">
+                                Level 50
+                            </label>
+                        </div>
+                    </div>
                     <table class="upgrades-table">
                         <thead>
                             <tr>
@@ -512,12 +616,13 @@ function showUnitInfo(unit) {
                         </tr>
                     `;
                 } else {
-                    // Standard unit row
+                    // Standard unit row with damage multiplier (not rounded)
+                    const adjustedDamage = upgrade.damage * damageMultiplier;
                     upgradesHTML += `
                         <tr>
                             <td>${Upgrade}</td>
                             <td>${upgrade.cost}</td>
-                            <td>${upgrade.damage}</td>
+                            <td>${adjustedDamage}</td>
                             <td>${upgrade.range}</td>
                             <td>${upgrade.cooldown}s</td>
                             <td>${upgrade.aoe}</td>

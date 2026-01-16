@@ -88,12 +88,12 @@
 .unit-name { font-size: clamp(0.9vw, 0.9vw, 0.9vw); padding: 0.4vh 0; }
 
 /* Unit Info */
-.unit-info {  grid-area: Unit-Info;  width: 37vw;  max-height: 55vh;  display: flex;  flex-direction: column; opacity: 1; overflow: hidden;}
+.unit-info {  grid-area: Unit-Info;  width: 37vw;  max-height: 55vh;  display: flex;  flex-direction: column; opacity: 1; overflow: hidden; position: relative;}
 .units-page .unit-selected .unit-info {opacity: 1;}
 
 .close-info-btn {
     position: absolute;
-    /* top: 1vh; */
+    top: 1vh;
     left: 1vw;
     width: 3vh;
     height: 3vh;
@@ -115,9 +115,10 @@
 }
 
 .close-info-btn p {
-    position: relative;
-    top: -.2vh;
+    position: absolute;
+    top: -0.2vh;
 }
+
 .close-info-btn:hover {
     background-color: #5C3000;
     transform: scale(1.1);
@@ -204,6 +205,46 @@
 /* Upgrades Section - Title and Section spans */
 .upgrades-section { grid-column: 1 / 5; grid-row: 3; background: var(--scroll-track); padding: 1vw; border-radius: 0.8vw; border: 0.15vw solid var(--card-border); }
 .upgrades-section h4 { font-size: clamp(1.2vw, 1.2vw, 1.2vw); color: var(--text-third); margin-bottom: 1vh; text-transform: uppercase; }
+
+.upgrades-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+.level-selector {
+    display: flex;
+    gap: 0.5vw;
+}
+
+.level-btn {
+    padding: 0.3vh 0.8vw;
+    border: 0.3vh solid var(--card-border);
+    border-radius: 0.8vh;
+    background-color: #E8B966;
+    color: var(--text-secondary);
+    font-family: var(--font-main);
+    font-size: 1.3vh;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.level-btn:hover {
+    transform: scale(1.05);
+    background-color: var(--card-border);
+    color: var(--bg-color);
+}
+
+.level-btn input {
+    display: none;
+}
+
+.level-btn:has(input:checked) {
+    background-color: var(--card-border);
+    color: white;
+}
+
 
 /* Upgrades Table - Colour Theme + Style */
 .upgrades-table { width: 30.5vw; justify-self: center; border-collapse: collapse; background: var(--bg-color); border-radius: 0.6vw; overflow: hidden; }

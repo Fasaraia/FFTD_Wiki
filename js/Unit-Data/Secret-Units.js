@@ -131,8 +131,8 @@ unitsData.push(
             {
                 abilityName: "Tenshou Mugetsu",
                 abilityType: "Dmg",
-                abilityDescription: "Continuous Slashes performs 150 rapid slashes. Each slash deals 1/30 of the units base damage, for a total of 5x base damage if all hits land.",
-                abilityCooldown: "60s",
+                abilityDescription: "Tenshou Mugetsu instantly kills any mob, including bosses.",
+                abilityCooldown: "Global cooldown of 10 minutes",
                 abilityImage: "file path"
             }
         ]
@@ -147,16 +147,20 @@ unitsData.push(
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
-            1: { cost: 200, damage: 150, range: 3, cooldown: 2, aoe: "Single Target", attackType: "Ground" },
-            2: { cost: 400, damage: 300, range: 4, cooldown: 1.8, aoe: "Single Target", attackType: "Ground" },
-            3: { cost: 800, damage: 600, range: 5, cooldown: 1.5, aoe: "Cone", attackType: "Ground" }  
+            1: { cost: 550, damage: 70, range: 20, cooldown: 4, aoe: "Circle", attackType: "Ground" },
+            2: { cost: 860, damage: 90, range: 24, cooldown: 4, aoe: "Circle", attackType: "Ground" },
+            3: { cost: 1380, damage: 115, range: 30, cooldown: 4, aoe: "Line", attackType: "Ground" },
+            4: { cost: 1100, damage: 135, range: 35, cooldown: 4.5, aoe: "Line", attackType: "Ground" },
+            5: { cost: 1600, damage: 145, range: 40, cooldown: 4.5, aoe: "Line", attackType: "Ground" },
+            6: { cost: 2560, damage: 160, range: 40, cooldown: 4, aoe: "Line", attackType: "Ground" },
+            7: { cost: 2000, damage: 190, range: 40, cooldown: 4, aoe: "Line", attackType: "Ground" }
         },
         ability: [
             {
                 abilityName: "Spirit Bomb",
-                abilityType: "Dmg",
-                abilityDescription: "Continuous Slashes performs 150 rapid slashes. Each slash deals 1/30 of the units base damage, for a total of 5x base damage if all hits land.",
-                abilityCooldown: "60s",
+                abilityType: "Dmg and stun",
+                abilityDescription: "Spirit Bomb collects the total damage of all allied units currently placed on the map, then releases it as a massive area attack. The collected damage is divided by 2 and dealt to all mobs on the map. During the abilitys animation, all mobs are stunned for 60 seconds.",
+                abilityCooldown: "Global cooldown of 10 minutes",
                 abilityImage: "file path"
             }
         ]
@@ -177,6 +181,6 @@ unitsData.push(
             4: { cost: 1500, damage: 120, range: 30, cooldown: 3.5, aoe: "Circle", attackType: "Air" },
             5: { cost: 1700, damage: 140, range: 30, cooldown: 3.5, aoe: "Circle", attackType: "Air" },
             6: { cost: 5000, damage: 315, range: 50, cooldown: 6, aoe: "Line", attackType: "Air" }
-        },
+        }
     },
 );

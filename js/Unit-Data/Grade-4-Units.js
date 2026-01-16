@@ -195,7 +195,7 @@ unitsData.push(
         name: "Mustache (Fort)",
         rarity: "Grade 4",
         class: "Bishop",
-        obtainment: "Banner",
+        obtainment: "Evolve Mustache",
         placement: "Ground",
         update: "1.0",
         imageIcon: "./Images/Units/frost_moon_icon.png",

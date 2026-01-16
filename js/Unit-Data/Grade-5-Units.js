@@ -123,7 +123,7 @@ unitsData.push(
         name: "December 7th",
         rarity: "Grade 5",
         class: "Paladin",
-        obtainment: "Banner",
+        obtainment: "Release Event",
         placement: "Ground",
         update: "1.0",
         imageIcon: "./Images/Units/frost_moon_icon.png",
@@ -141,7 +141,7 @@ unitsData.push(
         name: "Projo (Young)",
         rarity: "Grade 5",
         class: "Paladin",
-        obtainment: "Banner",
+        obtainment: "Shibuya Hardcore Map",
         placement: "Ground",
         update: "1.0",
         imageIcon: "./Images/Units/frost_moon_icon.png",
@@ -313,7 +313,7 @@ unitsData.push(
         name: "Toeje",
         rarity: "Grade 5",
         class: "Paladin",
-        obtainment: "Banner",
+        obtainment: "Shibuya Map",
         placement: "Ground",
         update: "1.0",
         imageIcon: "./Images/Units/frost_moon_icon.png",
@@ -340,7 +340,7 @@ unitsData.push(
         name: "Crimson Queen",
         rarity: "Grade 5",
         class: "Magician",
-        obtainment: "Banner",
+        obtainment: "Blood Moon",
         placement: "Hill",
         update: "1.0",
         imageIcon: "./Images/Units/frost_moon_icon.png",
@@ -383,7 +383,7 @@ unitsData.push(
         name: "Empire Jenava",
         rarity: "Grade 5",
         class: "Magician",
-        obtainment: "Banner",
+        obtainment: "Evolve Mil Jenava",
         placement: "Hill",
         update: "1.0",
         imageIcon: "./Images/Units/frost_moon_icon.png",
@@ -408,7 +408,7 @@ unitsData.push(
         name: "Jackpot Dealer",
         rarity: "Grade 5",
         class: "Paladin",
-        obtainment: "Banner",
+        obtainment: "Underground Hideout",
         placement: "Ground",
         update: "1.0",
         imageIcon: "./Images/Units/frost_moon_icon.png",
@@ -424,7 +424,41 @@ unitsData.push(
                 abilityName: "Domain Expansion: Idle Death Gacha",
                 abilityType: "Self buff",
                 abilityDescription: "Idle Death Gacha is an ability that buffs Jackpot Dealer based off of how many jackpots you hit. When this ability is first activated you gain the ability to roll. The cost of rolls starts at 5k and doubles each time you receive a jackpot. Each time you hit a jackpot both your percentage to hit another jackpot and the cost per roll increases. The duration of the buffs from each jackpot last until the end of the ability.",
-                abilityCooldown: "15 min",
+                abilityCooldown: "Global cooldown of 15 minutes",
+                abilityImage: "file path"
+            }
+        ]
+    },
+    {
+        name: "King of Curses",
+        rarity: "Grade 5",
+        class: "Paladin",
+        obtainment: "Unobtainable",
+        placement: "Ground",
+        update: "1.0",
+        imageIcon: "./Images/Units/frost_moon_icon.png",
+        image: "./Images/Units/frost_moon.png",
+        statsEffects: [
+            {
+                name: "Burn",
+                icon: "file path",
+                description: "Burn applies 3 damage ticks. Each tick deals damage equal to the unit base damage."
+            }
+        ],
+        upgrades: {
+            1: { cost: 270, damage: 30, range: 20, cooldown: 5, aoe: "Line", attackType: "Ground"},
+            2: { cost: 360, damage: 40, range: 20, cooldown: 5, aoe: "Line", attackType: "Ground"},
+            3: { cost: 550, damage: 55, range: 20, cooldown: 5, aoe: "Circle", attackType: "Ground/Burn"},
+            4: { cost: 800, damage: 65, range: 25, cooldown: 5, aoe: "Circle", attackType: "Ground/Burn"},
+            5: { cost: 1080, damage: 80, range: 30, cooldown: 5, aoe: "Circle", attackType: "Ground/Burn"},
+            6: { cost: 1680, damage: 80, range: 30, cooldown: 7, aoe: "Circle", attackType: "Ground/Burn"}
+        },
+        ability: [
+            {
+                abilityName: "Domain Expansion",
+                abilityType: "",
+                abilityDescription: "",
+                abilityCooldown: "",
                 abilityImage: "file path"
             }
         ]

@@ -53,6 +53,65 @@ function unitsCleanup() {
     infoOpen = false;
 }
 
+// Function to close unit info panel
+function closeUnitInfo() {
+    const unitsPage = document.querySelector('.units-page');
+    const unitInfo = document.querySelector('.unit-info');
+    const unitsDisplay = document.querySelector('.units-display');
+    const infoContent = document.querySelector('.unit-info .info-content');
+    
+    if (!infoOpen) return;
+
+   const elements = infoContent.querySelectorAll('.unit-info-element');
+    anime({
+        targets: elements,
+        opacity: {
+            value: [1, 0],
+            duration: 200,
+            easing: 'linear'
+        },
+        translateY: {
+            value: [0, 20],
+            duration: 200,
+            easing: 'linear'
+        },
+        delay: anime.stagger(100, {direction: 'reverse'}),
+        complete: () => {
+            if (unitInfo) {
+                anime({
+                    targets: unitInfo,
+                    opacity: [1, 0],
+                    translateY: [0, 10],
+                    duration: 500,
+                    easing: 'easeInCubic',
+                    complete: () => {
+                        if (unitsDisplay) {
+                            anime({
+                                targets: unitsDisplay,
+                                width: '56vw',
+                                duration: 300,
+                                easing: 'easeInCubic',
+                                complete: () => {
+                                    infoOpen = false;
+                                    // Remove unit-selected class
+                                    const unitsPage = document.querySelector('.units-page');
+                                    if (unitsPage) {
+                                        unitsPage.classList.remove('unit-selected');
+                                    }
+                                    // Clear content
+                                    if (infoContent) {
+                                        infoContent.innerHTML = '';
+                                    }
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+        }
+    });
+}
+
 // Function to load evolved unit when clicking the evolution image
 function loadEvolvedUnit(unitName) {
     const evolvedUnit = unitsData.find(u => u.name === unitName);

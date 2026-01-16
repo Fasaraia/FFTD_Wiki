@@ -82,18 +82,17 @@
 /* Individual Item Card */
 .item-card {
     position: relative;
-    aspect-ratio: 1;
     background: var(--bg-color);
     border: 0.3vh solid var(--scroll-track);
     width: 7vw;
     border-radius: 0.8vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     padding: 0.8vw 0 0.8vw 0px;
     cursor: pointer;
     transition: all 0.3s ease;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .item-card:hover {

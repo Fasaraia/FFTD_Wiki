@@ -91,6 +91,38 @@
 .unit-info {  grid-area: Unit-Info;  width: 37vw;  max-height: 55vh;  display: flex;  flex-direction: column; opacity: 1; overflow: hidden;}
 .units-page .unit-selected .unit-info {opacity: 1;}
 
+.close-info-btn {
+    position: absolute;
+    /* top: 1vh; */
+    left: 1vw;
+    width: 3vh;
+    height: 3vh;
+    border: 0.3vh solid var(--card-border);
+    border-radius: 0.5vh;
+    background-color: var(--card-border);
+    color: var(--bg-color);
+    font-family: var(--font-main);
+    font-size: 2.5vh;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.close-info-btn p {
+    position: relative;
+    top: -.2vh;
+}
+.close-info-btn:hover {
+    background-color: #5C3000;
+    transform: scale(1.1);
+}
+
 .units-info .title, .units-info .break { position: sticky; background-color: var(--bg-color); z-index: 10; }
 
 .info-content { flex: 1; font-family: var(--font-main); font-size: 1.8vh; color: var(--text-secondary); padding: 1vh; overflow-y: auto; }

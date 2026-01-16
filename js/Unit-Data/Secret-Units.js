@@ -87,31 +87,6 @@
 
 unitsData.push(
     {
-        name: "Unit (Evolved)",
-        rarity: "Secret",
-        class: "Paladin",
-        obtainment: "Banner",
-        placement: "Ground",
-        update: "1.0",
-        imageIcon: "./Images/Units/frost_moon_icon.png",
-        image: "./Images/Units/frost_moon.png",
-        upgrades: {
-            1: { cost: 200, damage: 150, range: 3, cooldown: 2, aoe: "Single Target", attackType: "Ground" },
-            2: { cost: 400, damage: 300, range: 4, cooldown: 1.8, aoe: "Single Target", attackType: "Ground" },
-            3: { cost: 800, damage: 600, range: 5, cooldown: 1.5, aoe: "Cone", attackType: "Ground" }  
-        },
-        passive: [
-            {
-                passiveName: "test",
-                passiveType: "test",
-                passiveDescription: "test description",
-                passiveCooldown: "10s",
-                passiveImage: "Images/Units/frost_moon_icon.png"
-            }
-        ],
-        ability: []
-    },
-    {
         name: "Ichi (D)",
         rarity: "Secret",
         class: "Paladin",

@@ -1,6 +1,8 @@
 /* Items Page */
 .items-page {
     border: 0.6vh solid var(--card-border);
+    width: 72vw;
+    justify-self: center;
     border-radius: 2vh;
     background-color: var(--bg-color);
     padding: 1vw;

@@ -206,7 +206,12 @@ function initializeUpdateDropdown() {
     updates.forEach(update => {
         const option = document.createElement('option');
         option.value = update;
-        option.textContent = `Update ${update}`;
+        if (option.value == "Release") {
+            option.textContent = `${update}`
+        } else {
+            option.textContent = `Update ${update}`;
+        }
+        
         select.appendChild(option);
     });
     

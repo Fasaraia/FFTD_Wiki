@@ -75,7 +75,7 @@
 .items-grid {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    gap: 1vw;
+    gap: 0.6vw;
     background: var(--card-border);
     padding: 1.5vw;
     border-radius: 1vh;

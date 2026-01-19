@@ -8,18 +8,15 @@ function loadPage(page) {
         })
         .then(html => {
             document.getElementById('content').innerHTML = html;
+
             const elements = document.querySelectorAll('#content-box');
             elements.forEach(el => el.style.opacity = 0);
+
             animatePageContent();
-            if (page.includes('units-page.html')) {
-                loadAllUnitData();
-            }
-            else if (page.includes('gamemodes-page.html')){
-                initGameModesPage();
-            }
-            else if (page.includes('items-page.html')){
-                initItemsPage();
-            }
+
+            if (page.includes('units-page.html')) { loadAllUnitData(); }
+            else if (page.includes('gamemodes-page.html')){ initGameModesPage(); }
+            else if (page.includes('items-page.html')){ initItemsPage(); }
         })
         .catch(error => {
             console.error('Load error:', error);
@@ -30,7 +27,6 @@ function loadPage(page) {
 
 
 function animatePageContent() {
-    // Generic animation for other pages
     const elements = document.querySelectorAll('#content-box:not(.unit-info)');
     anime({
         targets: elements,

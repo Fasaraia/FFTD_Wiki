@@ -7,28 +7,16 @@ let currentUnit = null; // Store the current unit being displayed
 // Function to load all unit data files
 async function loadAllUnitData() {
     try {
-        // Import all unit data files
-
         if (!scriptsLoaded) {
-            // Import all unit data files
             const dataFiles = [
                 'js/Unit-Data/Grade-3-Units.js',
                 'js/Unit-Data/Grade-4-Units.js',
                 'js/Unit-Data/Grade-5-Units.js',
                 'js/Unit-Data/Secret-Units.js'
             ];
-            
-            // Load each file as a script
-            for (const file of dataFiles) {
-                await loadScript(file);
-            }
-            
+            for (const file of dataFiles) { await loadScript(file); }
             scriptsLoaded = true;
         }
-        
-        console.log('All unit data loaded successfully. Total units:', unitsData.length);
-        
-        // Initialize the UI after data is loaded
         initializeUpdateDropdown();
         setupFilterListeners();
         unitsCleanup();
@@ -39,7 +27,6 @@ async function loadAllUnitData() {
     }
 }
 
-// Helper function to load a script dynamically
 function loadScript(src) {
     return new Promise((resolve, reject) => {
         const script = document.createElement('script');
@@ -62,7 +49,6 @@ function updateUnitLevel() {
     const levelRadio = document.querySelector('input[name="unit-level"]:checked');
     const level = levelRadio ? levelRadio.value : '1';
     
-    // Get damage multiplier based on rarity
     let damageMultiplier = 1;
     if (level === '50') {
         switch(currentUnit.rarity) {
@@ -78,8 +64,6 @@ function updateUnitLevel() {
                 break;
         }
     }
-    
-    // Only update the upgrades table body
     updateUpgradesTable(currentUnit, damageMultiplier);
 }
 
@@ -92,8 +76,6 @@ function updateUpgradesTable(unit, damageMultiplier) {
     if (!tbody) return;
     
     const isMoneyUnit = unit.class === 'Bishop' && unit.farm === true;
-    
-    // Build table body HTML
     let tableBodyHTML = '';
     
     Object.keys(unit.upgrades).forEach(Upgrade => {
@@ -122,8 +104,7 @@ function updateUpgradesTable(unit, damageMultiplier) {
             `;
         }
     });
-    
-    // Animate only the table body
+
     anime({
         targets: tbody,
         opacity: [1, 0],
@@ -150,7 +131,6 @@ function closeUnitInfo() {
     
     if (!infoOpen) return;
 
-    // Fade out elements first
     const elements = infoContent.querySelectorAll('.unit-info-element');
     anime({
         targets: elements,
@@ -219,12 +199,8 @@ function initializeUpdateDropdown() {
         console.error('Update select not found');
         return;
     }
-    
-    // Get unique updates from unitsData
+
     const updates = [...new Set(unitsData.map(unit => unit.update))].sort();
-    
-    console.log('Found updates:', updates);
-    
     select.innerHTML = '<option value="all">All Updates</option>';
     
     updates.forEach(update => {
@@ -245,30 +221,15 @@ function applyFilters(units, filters) {
     
     return units.filter(unit => {
         // Rarity filter
-        if (filters.rarity.length > 0 && !filters.rarity.includes(unit.rarity)) {
-            return false;
-        }
-        
-        // Class filter
-        if (filters.class.length > 0 && !filters.class.includes(unit.class)) {
-            return false;
-        }
-        
-        // Update filter
-        if (filters.update !== 'all' && unit.update !== filters.update) {
-            return false;
-        }
-        
-        // Placement filter
-        if (filters.placement.length > 0 && !filters.placement.includes(unit.placement)) {
-            return false;
-        }
+        if (filters.rarity.length > 0 && !filters.rarity.includes(unit.rarity)) { return false; }
+        if (filters.class.length > 0 && !filters.class.includes(unit.class)) { return false; }
+        if (filters.update !== 'all' && unit.update !== filters.update) { return false; }
+        if (filters.placement.length > 0 && !filters.placement.includes(unit.placement)) { return false; }
         
         return true;
     });
 }
 
-// Get current filter state - ID BASED VERSION
 function getCurrentFilters() {
     const filters = {
         rarity: [],
@@ -277,44 +238,21 @@ function getCurrentFilters() {
         placement: []
     };
     
-    // Get rarity filters using IDs
-    if (document.getElementById('filter-secret')?.checked) {
-        filters.rarity.push('Secret');
-    }
-    if (document.getElementById('filter-grade5')?.checked) {
-        filters.rarity.push('Grade 5');
-    }
-    if (document.getElementById('filter-grade4')?.checked) {
-        filters.rarity.push('Grade 4');
-    }
-    if (document.getElementById('filter-grade3')?.checked) {
-        filters.rarity.push('Grade 3');
-    }
+    if (document.getElementById('filter-secret')?.checked) { filters.rarity.push('Secret'); }
+    if (document.getElementById('filter-grade5')?.checked) { filters.rarity.push('Grade 5'); }
+    if (document.getElementById('filter-grade4')?.checked) { filters.rarity.push('Grade 4'); }
+    if (document.getElementById('filter-grade3')?.checked) { filters.rarity.push('Grade 3'); }
     
-    // Get class filters using IDs
-    if (document.getElementById('filter-paladin')?.checked) {
-        filters.class.push('Paladin');
-    }
-    if (document.getElementById('filter-magician')?.checked) {
-        filters.class.push('Magician');
-    }
-    if (document.getElementById('filter-bishop')?.checked) {
-        filters.class.push('Bishop');
-    }
+    if (document.getElementById('filter-paladin')?.checked) { filters.class.push('Paladin'); }
+    if (document.getElementById('filter-magician')?.checked) { filters.class.push('Magician'); }
+    if (document.getElementById('filter-bishop')?.checked) { filters.class.push('Bishop'); }
     
-    // Get update filter
     const updateSelect = document.getElementById('update-select');
-    if (updateSelect) {
-        filters.update = updateSelect.value;
-    }
+    if (updateSelect) { filters.update = updateSelect.value; }
     
-    // Get placement filters using IDs
-    if (document.getElementById('filter-ground')?.checked) {
-        filters.placement.push('Ground');
-    }
-    if (document.getElementById('filter-hill')?.checked) {
-        filters.placement.push('Hill');
-    }
+
+    if (document.getElementById('filter-ground')?.checked) { filters.placement.push('Ground'); }
+    if (document.getElementById('filter-hill')?.checked) { filters.placement.push('Hill'); }
     
     return filters;
 }
@@ -327,21 +265,15 @@ function resetFilters() {
         'filter-ground', 'filter-hill'
     ];
     
-    // Uncheck all checkboxes
     filterIds.forEach(id => {
         const checkbox = document.getElementById(id);
-        if (checkbox) {
-            checkbox.checked = false;
-        }
+        if (checkbox) { checkbox.checked = false; }
     });
-    
-    // Reset update dropdown
+
     const updateSelect = document.getElementById('update-select');
-    if (updateSelect) {
-        updateSelect.value = 'all';
-    }
+    if (updateSelect) { updateSelect.value = 'all'; }
     
-    // Reload units with no filters
+
     loadUnits(unitsData, null);
 }
 
@@ -365,7 +297,6 @@ function setupFilterListeners() {
         }
     });
     
-    // Add event listener to update dropdown
     const updateSelect = document.getElementById('update-select');
     if (updateSelect) {
         updateSelect.addEventListener('change', () => {
@@ -374,13 +305,8 @@ function setupFilterListeners() {
         });
     }
     
-    // Add event listener to reset button
     const resetBtn = document.querySelector('.reset-btn');
-    if (resetBtn) {
-        resetBtn.addEventListener('click', () => {
-            resetFilters();
-        });
-    }
+    if (resetBtn) { resetBtn.addEventListener('click', () => { resetFilters(); }); }
 }
 
 function loadUnits(units = unitsData, filters = null) {
@@ -468,8 +394,7 @@ function createCategorySection(rarity, units) {
 function createUnitCard(unit) {
     const card = document.createElement('div');
     card.className = 'unit-card';
-    
-    // Add rarity class for styling
+
     const rarityClass = unit.rarity.toLowerCase().replace(' ', '-');
     card.classList.add(`rarity-${rarityClass}`);
     
@@ -477,8 +402,7 @@ function createUnitCard(unit) {
         <img src="${unit.imageIcon}">
         <div class="unit-name">${unit.name}</div>
     `;
-    
-    // Add click event to show unit info
+
     card.addEventListener('click', () => showUnitInfo(unit));
     
     return card;
@@ -494,22 +418,17 @@ function showUnitInfo(unit, damageMultiplier = 1) {
         console.error('Info content element not found');
         return;
     }
-    
-    // Store the current unit
+
     currentUnit = unit;
     
-    // Add class to trigger layout change
     if (unitsPage) {
         unitsPage.classList.add('unit-selected');
     }
     
-    // Function to update content with animation
     const updateContent = () => {
-        // Build Evolution Table
         let evolutionHTML = '';
         let hasEvolution = false;
         
-        // Check if evolution object exists
         if (unit.evolution) {
             const evolvedImageSrc = unit.evolution.evolvedImage;
             const evolvedUnitName = unit.evolution.evolvedUnitName;
@@ -527,14 +446,12 @@ function showUnitInfo(unit, damageMultiplier = 1) {
                     <div class="evolution-list">
             `;
             
-            // Handle tasks if they exist
             if (unit.evolution.tasks) {
                 Object.values(unit.evolution.tasks).forEach(task => {
                     evolutionHTML += `<div class="evolution-item task">${task}</div>`;
                 });
             }
-            
-            // Handle resources if they exist
+
             if (unit.evolution.resources) {
                 Object.entries(unit.evolution.resources).forEach(([resourceName, amount]) => {
                     const resourceLower = resourceName.toLowerCase();
@@ -551,10 +468,8 @@ function showUnitInfo(unit, damageMultiplier = 1) {
             hasEvolution = true;
         }
         
-        // Check if this is a money unit (bishop class with farm property)
-        const isMoneyUnit = unit.class === 'Bishop' && unit.farm === true;
+        const isMoneyUnit = unit.farm === true;
 
-        // Build upgrades table
         let upgradesHTML = '';
         if (unit.upgrades) {
             upgradesHTML = `
@@ -578,14 +493,12 @@ function showUnitInfo(unit, damageMultiplier = 1) {
             `;
             
             if (isMoneyUnit) {
-                // Money unit header
                 upgradesHTML += `
                                 <th>Upgrade</th>
                                 <th>Cost</th>
                                 <th>Money</th>
                 `;
             } else {
-                // Standard unit header
                 upgradesHTML += `
                                 <th>Upgrade</th>
                                 <th>Cost</th>
@@ -596,7 +509,6 @@ function showUnitInfo(unit, damageMultiplier = 1) {
                                 <th>Attack Type</th>
                 `;
             }
-            
             upgradesHTML += `
                             </tr>
                         </thead>
@@ -607,7 +519,6 @@ function showUnitInfo(unit, damageMultiplier = 1) {
                 const upgrade = unit.upgrades[Upgrade];
                 
                 if (isMoneyUnit) {
-                    // Money unit row
                     upgradesHTML += `
                         <tr>
                             <td>${Upgrade}</td>
@@ -616,7 +527,6 @@ function showUnitInfo(unit, damageMultiplier = 1) {
                         </tr>
                     `;
                 } else {
-                    // Standard unit row with damage multiplier (not rounded)
                     const adjustedDamage = upgrade.damage * damageMultiplier;
                     upgradesHTML += `
                         <tr>
@@ -639,7 +549,6 @@ function showUnitInfo(unit, damageMultiplier = 1) {
             `;
         }
         
-        // Build passives section
         let passivesHTML = '';
         let hasPassives = false;
         if (unit.passive && unit.passive.length > 0) {
@@ -650,7 +559,6 @@ function showUnitInfo(unit, damageMultiplier = 1) {
                     <div class="passives-section">
                         <h4>Passives</h4>
                 `;
-                
                 validPassives.forEach((passive) => {
                     passivesHTML += `
                         <div class="passive-item">
@@ -664,13 +572,10 @@ function showUnitInfo(unit, damageMultiplier = 1) {
                         </div>
                     `;
                 });
-                
                 passivesHTML += `</div>`;
                 hasPassives = true;
             }
         }
-        
-        // Build abilities section
         let abilitiesHTML = '';
         let hasAbilities = false;
         if (unit.ability && unit.ability.length > 0) {
@@ -700,8 +605,6 @@ function showUnitInfo(unit, damageMultiplier = 1) {
                 hasAbilities = true;
             }
         }
-        
-        // Build stats effects HTML
         let statsEffectsHTML = '';
         if (unit.statsEffects && unit.statsEffects.length > 0) {
             statsEffectsHTML = '<div class="stats-effects">';
@@ -721,7 +624,6 @@ function showUnitInfo(unit, damageMultiplier = 1) {
             });
             statsEffectsHTML += '</div>';
         }
-        
         infoContent.innerHTML = `
             <div class="unit-details">
                 
@@ -743,18 +645,13 @@ function showUnitInfo(unit, damageMultiplier = 1) {
                     ${abilitiesHTML}
             </div>
         `;
-        
-        // Dynamically adjust grid layout based on what sections exist
+
         const unitDetails = infoContent.querySelector('.unit-details');
-        
         let gridTemplateAreas = '';
         let gridTemplateRows = 'auto auto auto';
         
-        if (hasEvolution) {
-            gridTemplateAreas = '"image title evolution evolution" "image stats evolution evolution"';
-        } else {
-            gridTemplateAreas = '"image title title title" "image stats stats stats"';
-        }
+        if (hasEvolution) {gridTemplateAreas = '"image title evolution evolution" "image stats evolution evolution"';} 
+        else {gridTemplateAreas = '"image title title title" "image stats stats stats"'; }
         
         gridTemplateAreas += ' "upgrades upgrades upgrades upgrades"';
         gridTemplateRows += ' auto';
@@ -775,7 +672,6 @@ function showUnitInfo(unit, damageMultiplier = 1) {
             unitDetails.style.gridTemplateRows = gridTemplateRows;
         }
         
-        // Update CSS grid-area assignments
         const evolutionSection = infoContent.querySelector('.evolution-section');
         const upgradesSection = infoContent.querySelector('.upgrades-section');
         const passivesSection = infoContent.querySelector('.passives-section');

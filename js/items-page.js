@@ -8,8 +8,7 @@ function initItemsPage() {
     }
     
     let html = '';
-    
-    // Loop through each item type category
+
     Object.keys(itemsData).forEach(categoryKey => {
         const category = itemsData[categoryKey];
         
@@ -19,7 +18,6 @@ function initItemsPage() {
                 <div class="items-grid">
         `;
         
-        // Add each item in the category
         category.items.forEach(item => {
             const obtainmentList = item.obtainment.map(method => `<li>${method}</li>`).join('');
             
@@ -69,8 +67,6 @@ function attachItemEventListeners() {
     itemCards.forEach(card => {
         card.addEventListener('click', () => {
             const itemId = card.dataset.itemId;
-            console.log('Item clicked:', itemId);
-            // Add any click functionality here (e.g., open detailed view)
         });
     });
 }

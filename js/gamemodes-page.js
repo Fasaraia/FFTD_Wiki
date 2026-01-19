@@ -143,45 +143,36 @@ function loadModeContent(mode) {
     attachEventListeners();
 }
 
-// Attach click event listeners to dynamically loaded content
 function attachEventListeners() {
-    // Story card click handlers
     const storyCards = document.querySelectorAll('.story-card:not(.locked)');
     storyCards.forEach(card => {
         card.addEventListener('click', () => {
             const storyName = card.dataset.storyName;
             console.log('Story card clicked:', storyName);
-            // Add navigation or modal logic here
         });
     });
     
-    // Endless card click handlers
     const endlessDropItems = document.querySelectorAll('.endless-drop-panel .drop-item');
     endlessDropItems.forEach(item => {
         item.addEventListener('click', () => {
             const itemName = item.querySelector('.drop-item-name').textContent;
             console.log('Endless drop item clicked:', itemName);
-            // Add navigation or modal logic here
         });
     });
     
-    // Fate's Path item click handlers
-    const fateItems = document.querySelectorAll('.fate-item');
-    fateItems.forEach(item => {
+    const fatepathItems = document.querySelectorAll('.fate-item');
+    fatepathItems.forEach(item => {
         item.addEventListener('click', () => {
             const pathId = item.dataset.pathId;
             console.log("Fate's Path clicked:", pathId);
-            // Add navigation or modal logic here
         });
     });
 }
 
-// Initialize game modes page - called after content is loaded
 function initGameModesPage() {
     const modeButtons = document.querySelectorAll('.mode-btn');
     const modeTitle = document.querySelector('.mode-title');
     
-    // Load initial mode (Journey)
     loadModeContent('journey');
     
     modeButtons.forEach(button => {
@@ -189,20 +180,13 @@ function initGameModesPage() {
             const mode = button.dataset.mode;
             const modeKey = mode === 'fates-path' ? 'fatesPath' : mode;
             
-            // Remove active class from all buttons
             modeButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
             button.classList.add('active');
             
-            // Load content for selected mode
             loadModeContent(modeKey);
             
-            // Update title
             const modeData = gameModeData[modeKey];
-            if (modeData) {
-                modeTitle.textContent = modeData.title;
-            }
+            if (modeData) { modeTitle.textContent = modeData.title; }
         });
     });
 }

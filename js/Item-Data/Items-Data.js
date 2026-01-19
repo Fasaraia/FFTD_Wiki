@@ -12,7 +12,7 @@ const itemsData = {
                 ]
             },
             {
-                name: "Exp boost",
+                name: "XP boost",
                 image: "file path",
                 description: "Multiplies all XP gained by x2. The duration depends on the variant (30m, 1h, 2h, 3h). Only one Exp Boost can be active at a time.",
                 obtainment: [

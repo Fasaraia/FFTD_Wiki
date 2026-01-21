@@ -40,6 +40,14 @@ const itemsData = {
                     "All Gamemodes"
                 ]
             },
+            {
+                name: "Sorcerers Hood",
+                image: "file path",
+                description: "Increases the chance of Jolly Moon by 0.4% for each",
+                obtainment: [
+                    "Winter Event Shop"
+                ]
+            },
 
         ]
     },
@@ -49,7 +57,7 @@ const itemsData = {
             {
                 name: "Deer Hat",
                 image: "file path",
-                description: "Increases unit damage by a random amount between 0%-0% while equipped.",
+                description: "Increases unit damage by a random amount between 10%-30% while equipped.",
                 obtainment: [
                     "Clown Island Map"
                 ]
@@ -57,7 +65,7 @@ const itemsData = {
             {
                 name: "Suppo Sniper",
                 image: "file path",
-                description: "Increases unit range by a random amount between 0%-0% while equipped.",
+                description: "Increases unit range by a random amount between 10%-30% while equipped.",
                 obtainment: [
                     "Clown Island Map"
                 ]
@@ -65,7 +73,7 @@ const itemsData = {
             {
                 name: "Staffy",
                 image: "file path",
-                description: "Increases unit damage by a random amount between 0%-0% while equipped.",
+                description: "Increases unit damage by a random amount between 20%-35% while equipped.",
                 obtainment: [
                     "Overlord Map"
                 ]
@@ -73,7 +81,7 @@ const itemsData = {
             {
                 name: "Overseer Wings",
                 image: "file path",
-                description: "Increases unit range by a random amount between 0%-0% while equipped.",
+                description: "Increases unit range by a random amount between 20%-35% while equipped.",
                 obtainment: [
                     "Overlord Map"
                 ]
@@ -81,7 +89,7 @@ const itemsData = {
             {
                 name: "Explosive Gear",
                 image: "file path",
-                description: "Increases unit damage by a random amount between 0%-0% while equipped.",
+                description: "Increases unit damage by a random amount between 30%-45% while equipped.",
                 obtainment: [
                     "Titan Realm Map"
                 ]
@@ -89,7 +97,7 @@ const itemsData = {
             {
                 name: "Manuever Gear",
                 image: "file path",
-                description: "Increases unit range by a random amount between 0%-0% while equipped.",
+                description: "Increases unit range by a random amount between 30%-45% while equipped.",
                 obtainment: [
                     "Titan Realm Map"
                 ]
@@ -97,7 +105,7 @@ const itemsData = {
             {
                 name: "Cursed Pet",
                 image: "file path",
-                description: "Increases unit damage by a random amount between 0%-0% while equipped.",
+                description: "Increases unit damage by a random amount between 30%-65% while equipped.",
                 obtainment: [
                     "Shibuya Map"
                 ]
@@ -105,7 +113,7 @@ const itemsData = {
             {
                 name: "Purple Hollow",
                 image: "file path",
-                description: "Increases unit range by a random amount between 0%-0% while equipped.",
+                description: "Increases unit range by a random amount between 30%-65% while equipped.",
                 obtainment: [
                     "Shibuya Map"
                 ]
@@ -113,7 +121,7 @@ const itemsData = {
             {
                 name: "Entro Sword",
                 image: "file path",
-                description: "Increases unit damage and range by a random amount between 0%-0% while equipped.",
+                description: "Increases unit damage and range by a random amount between 15%-30% while equipped.",
                 obtainment: [
                     "King David Quest"
                 ]
@@ -121,7 +129,7 @@ const itemsData = {
             {
                 name: "Replica Entro Sword",
                 image: "file path",
-                description: "Increases unit damage and range by a random amount between 0%-0% while equipped.",
+                description: "Increases unit damage by 15% and range by 10% while equipped.",
                 obtainment: [
                     "Buy from Roys"
                 ]
@@ -129,7 +137,7 @@ const itemsData = {
             {
                 name: "Crimson Scythe",
                 image: "file path",
-                description: "Increases unit range by a random amount between 0%-0% while equipped.",
+                description: "Increases unit range by a random amount between 30%-65% while equipped.",
                 obtainment: [
                     "Blood Moon"
                 ]
@@ -137,7 +145,7 @@ const itemsData = {
             {
                 name: "Spear of Sloth",
                 image: "file path",
-                description: "Increases unit damage or range by a random amount between 0%-0% while equipped.",
+                description: "Increases unit damage or range by a random amount between 20%-?% while equipped.",
                 obtainment: [
                     "Wheel of Fortune"
                 ]
@@ -145,7 +153,7 @@ const itemsData = {
             {
                 name: "BigSword",
                 image: "file path",
-                description: "Increases unit damage and range by a random amount between 0%-0% while equipped.",
+                description: "Increases unit damage and range by a random amount between 5%-20% while equipped.",
                 obtainment: [
                     "Buy from Exchange Shop"
                 ]
@@ -153,7 +161,7 @@ const itemsData = {
             {
                 name: "Robot Arms",
                 image: "file path",
-                description: "Increases unit damage and range by a random amount between 0%-0% while equipped.",
+                description: "Increases unit damage and range by a random amount between 25%-40% while equipped.",
                 obtainment: [
                     "God Moon"
                 ]
@@ -161,7 +169,7 @@ const itemsData = {
             {
                 name: "Celestial Bow",
                 image: "file path",
-                description: "Increases unit damage or range by a random amount between 0%-0% while equipped.",
+                description: "Increases unit damage or range by 30% while equipped.",
                 obtainment: [
                     "Release Event"
                 ]
@@ -169,9 +177,25 @@ const itemsData = {
             {
                 name: "Hero Sword",
                 image: "file path",
-                description: "Increases unit damage and range by a random amount between 0%-0% while equipped.",
+                description: "Increases unit damage and range by 30% while equipped.",
                 obtainment: [
                     "Need to be Final Fates content creator"
+                ]
+            },
+            {
+                name: "Silverine Comet",
+                image: "file path",
+                description: "Increases unit damage and range by ba random amount between 25%-35% while equipped.",
+                obtainment: [
+                    "jolly moon"
+                ]
+            },
+            {
+                name: "Silverine Sword",
+                image: "file path",
+                description: "Increases unit damage or range by a random amount between 40%-70% while equipped.",
+                obtainment: [
+                    "Buy from Winter Event Shop"
                 ]
             },
         ]
@@ -180,7 +204,7 @@ const itemsData = {
         title: "Currency",
         items: [   
             {
-                name: "Crystals",
+                name: "Crystal",
                 image: "file path",
                 description: "Crystals are the main in-game currency used to purchase units, evolutions and items.",
                 obtainment: [
@@ -210,6 +234,14 @@ const itemsData = {
                     "All Gamemodes",
                     "Daily Reward",
                     "Wheel of Fortune"
+                ]
+            },
+            {
+                name: "Snow Crystal",
+                image: "file path",
+                description: "Snow Crystal is an event currency used to roll the event banner and purchase items from the event shop.",
+                obtainment: [
+                    "Winter Event"
                 ]
             },
         ]

@@ -91,23 +91,23 @@ unitsData.push(
         rarity: "Secret",
         class: "Paladin",
         obtainment: "Banner",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 3)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
-            1: { cost: 400, damage: 35, range: 25, cooldown: 4, aoe: "Circle", attackType: "Ground" },
-            2: { cost: 1000, damage: 60, range: 35, cooldown: 4, aoe: "Circle", attackType: "Ground" },
-            3: { cost: 2500, damage: 85, range: 40, cooldown: 5, aoe: "Circle", attackType: "Ground" },
-            4: { cost: 4000, damage: 120, range: 60, cooldown: 6, aoe: "Line", attackType: "Ground" },
-            5: { cost: 15000, damage: 750, range: 70, cooldown: 6, aoe: "Line", attackType: "Ground" },
+            1: { cost: 400, damage: 35, range: 25, cooldown: 4, aoe: "Circle", attackType: "Ground"},
+            2: { cost: 1000, damage: 60, range: 35, cooldown: 4, aoe: "Circle", attackType: "Ground"},
+            3: { cost: 2500, damage: 85, range: 40, cooldown: 5, aoe: "Circle", attackType: "Ground"},
+            4: { cost: 4000, damage: 120, range: 60, cooldown: 6, aoe: "Line", attackType: "Ground"},
+            5: { cost: 15000, damage: 750, range: 70, cooldown: 6, aoe: "Line", attackType: "Ground"},
         },
         ability: [
             {
                 abilityName: "Tenshou Mugetsu",
                 abilityType: "Dmg",
                 abilityDescription: "Tenshou Mugetsu instantly kills any mob, including bosses.",
-                abilityCooldown: "Global cooldown of 10 minutes",
+                abilityCooldown: "Global cooldown of 5 minutes",
                 abilityImage: "file path"
             }
         ]
@@ -117,18 +117,18 @@ unitsData.push(
         rarity: "Secret",
         class: "Paladin",
         obtainment: "Banner",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 5)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
-            1: { cost: 550, damage: 70, range: 20, cooldown: 4, aoe: "Circle", attackType: "Ground" },
-            2: { cost: 860, damage: 90, range: 24, cooldown: 4, aoe: "Circle", attackType: "Ground" },
-            3: { cost: 1380, damage: 115, range: 30, cooldown: 4, aoe: "Line", attackType: "Ground" },
-            4: { cost: 1100, damage: 135, range: 35, cooldown: 4.5, aoe: "Line", attackType: "Ground" },
-            5: { cost: 1600, damage: 145, range: 40, cooldown: 4.5, aoe: "Line", attackType: "Ground" },
-            6: { cost: 2560, damage: 160, range: 40, cooldown: 4, aoe: "Line", attackType: "Ground" },
-            7: { cost: 2000, damage: 190, range: 40, cooldown: 4, aoe: "Line", attackType: "Ground" }
+            1: { cost: 550, damage: 100, range: 20, cooldown: 4, aoe: "Circle", attackType: "Ground"},
+            2: { cost: 860, damage: 135, range: 24, cooldown: 4, aoe: "Circle", attackType: "Ground"},
+            3: { cost: 1380, damage: 160, range: 30, cooldown: 4, aoe: "Line", attackType: "Ground"},
+            4: { cost: 1100, damage: 175, range: 40, cooldown: 4.5, aoe: "Line", attackType: "Ground"},
+            5: { cost: 1600, damage: 200, range: 40, cooldown: 4.5, aoe: "Line", attackType: "Ground"},
+            6: { cost: 2560, damage: 230, range: 40, cooldown: 4, aoe: "Line", attackType: "Ground"},
+            7: { cost: 2000, damage: 270, range: 45, cooldown: 4, aoe: "Line", attackType: "Ground"}
         },
         ability: [
             {
@@ -145,17 +145,70 @@ unitsData.push(
         rarity: "Secret",
         class: "Paladin",
         obtainment: "Banner",
-        placement: "Hill",
+        placement: "Hill (Max: 5)",
+        update: "Release",
+        imageIcon: "./Images/Units/frost_moon_icon.png",
+        image: "./Images/Units/frost_moon.png",
+        upgrades: {
+            1: { cost: 350, damage: 125, range: 20, cooldown: 3, aoe: "Circle", attackType: "Air"},
+            2: { cost: 500, damage: 150, range: 25, cooldown: 3, aoe: "Circle", attackType: "Air"},
+            3: { cost: 1150, damage: 175, range: 30, cooldown: 3.5, aoe: "Circle", attackType: "Air"},
+            4: { cost: 1300, damage: 250, range: 35, cooldown: 3.5, aoe: "Circle", attackType: "Air"},
+            5: { cost: 1500, damage: 300, range: 40, cooldown: 3.5, aoe: "Circle", attackType: "Air"},
+            6: { cost: 4500, damage: 350, range: 70, cooldown: 6, aoe: "Line", attackType: "Air"}
+        }
+    },
+    {
+        name: "Juju-Tsu (Hatred)",
+        rarity: "Secret",
+        class: "Paladin",
+        obtainment: "Banner",
+        placement: "Ground (Max: 4)",
         update: "1.0",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
-            1: { cost: 350, damage: 55, range: 20, cooldown: 3, aoe: "Circle", attackType: "Air" },
-            2: { cost: 500, damage: 75, range: 20, cooldown: 3, aoe: "Circle", attackType: "Air" },
-            3: { cost: 1150, damage: 100, range: 30, cooldown: 3.5, aoe: "Circle", attackType: "Air" },
-            4: { cost: 1500, damage: 120, range: 30, cooldown: 3.5, aoe: "Circle", attackType: "Air" },
-            5: { cost: 1700, damage: 140, range: 30, cooldown: 3.5, aoe: "Circle", attackType: "Air" },
-            6: { cost: 5000, damage: 315, range: 50, cooldown: 6, aoe: "Line", attackType: "Air" }
+            1: { cost: 200, damage: 70, range: 20, cooldown: 3, aoe: "Single Target", attackType: "Ground"},
+            2: { cost: 500, damage: 100, range: 30, cooldown: 3, aoe: "Circle", attackType: "Ground"},
+            3: { cost: 750, damage: 170, range: 35, cooldown: 3, aoe: "Circle", attackType: "Ground"},
+            4: { cost: 1250, damage: 190, range: 40, cooldown: 3, aoe: "Circle", attackType: "Ground"},
+            5: { cost: 1800, damage: 250, range: 50, cooldown: 4, aoe: "Circle", attackType: "Ground"},
+            6: { cost: 2000, damage: 325, range: 50, cooldown: 4, aoe: "Circle", attackType: "Ground"},
+            7: { cost: 2500, damage: 350, range: 55, cooldown: 4, aoe: "Circle", attackType: "Ground"}
         }
+    },
+    {
+        name: "Silver Sword",
+        rarity: "Secret",
+        class: "Paladin",
+        obtainment: "Banner",
+        placement: "Ground (Max: 2)",
+        update: "1.0",
+        imageIcon: "./Images/Units/frost_moon_icon.png",
+        image: "./Images/Units/frost_moon.png",
+        statsEffects: [
+            {
+                name: "Slow",
+                icon: "file path",
+                description: "Slows Mobs by 10% (% can vary between different units)"
+            }
+        ],
+        upgrades: {
+            1: { cost: 2000, damage: 150, range: 20, cooldown: 4, aoe: "Line", attackType: "Ground"},
+            2: { cost: 3000, damage: 300, range: 25, cooldown: 4, aoe: "Line", attackType: "Ground"},
+            3: { cost: 3500, damage: 400, range: 30, cooldown: 4, aoe: "Circle", attackType: "Ground"},
+            4: { cost: 5000, damage: 550, range: 35, cooldown: 4, aoe: "Circle", attackType: "Ground"},
+            5: { cost: 5500, damage: 750, range: 45, cooldown: 5, aoe: "Line", attackType: "Hybrid"},
+            6: { cost: 6000, damage: 850, range: 60, cooldown: 5, aoe: "Line", attackType: "Hybrid"}
+        },
+        ability: [
+            {
+                abilityName: "Twin Hunting Flash",
+                abilityType: "Dmg",
+                abilityDescription: "The ability deals damage equal to 25x the unit damage.",
+                abilityCooldown: "Global cooldown of 5 minutes",
+                abilityImage: "file path"
+            }
+        ]
     },
 );

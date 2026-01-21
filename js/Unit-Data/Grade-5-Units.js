@@ -5,8 +5,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Paladin",
         obtainment: "Banner",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 5)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
@@ -23,8 +23,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Paladin",
         obtainment: "Banner",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 5)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
@@ -41,8 +41,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Paladin",
         obtainment: "Banner",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 5)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
@@ -59,8 +59,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Paladin",
         obtainment: "Release Event",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 5)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
@@ -77,8 +77,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Paladin",
         obtainment: "Shibuya Hardcore Map",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 5)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
@@ -95,8 +95,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Magician",
         obtainment: "Banner",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 5)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         statsEffects: [
@@ -120,8 +120,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Paladin",
         obtainment: "Banner",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 5)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
@@ -138,8 +138,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Paladin",
         obtainment: "Banner",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 5)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
@@ -156,8 +156,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Magician",
         obtainment: "Banner",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 5)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         statsEffects: [
@@ -181,8 +181,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Paladin",
         obtainment: "Banner",
-        placement: "Hill",
-        update: "1.0",
+        placement: "Hill (Max: 1)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
@@ -197,8 +197,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Paladin",
         obtainment: "Banner",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 5)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
@@ -224,8 +224,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Magician",
         obtainment: "Banner",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 5)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         statsEffects: [
@@ -249,8 +249,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Paladin",
         obtainment: "Shibuya Map",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 5)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
@@ -276,8 +276,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Magician",
         obtainment: "Blood Moon",
-        placement: "Hill",
-        update: "1.0",
+        placement: "Hill (Max: 1)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         statsEffects: [
@@ -301,8 +301,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Paladin",
         obtainment: "Banner",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 2)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
@@ -319,8 +319,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Magician",
         obtainment: "Evolve Mil Jenava",
-        placement: "Hill",
-        update: "1.0",
+        placement: "Hill (Max: 3)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         statsEffects: [
@@ -344,8 +344,8 @@ unitsData.push(
         rarity: "Grade 5",
         class: "Paladin",
         obtainment: "Underground Hideout",
-        placement: "Ground",
-        update: "1.0",
+        placement: "Ground (Max: 1)",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         upgrades: {
@@ -370,7 +370,7 @@ unitsData.push(
         class: "Paladin",
         obtainment: "Unobtainable",
         placement: "Ground",
-        update: "1.0",
+        update: "Release",
         imageIcon: "./Images/Units/frost_moon_icon.png",
         image: "./Images/Units/frost_moon.png",
         statsEffects: [
@@ -397,5 +397,66 @@ unitsData.push(
                 abilityImage: "file path"
             }
         ]
+    },
+    {
+        name: "Hesperia",
+        rarity: "Grade 5",
+        class: "Paladin",
+        obtainment: "Banner",
+        placement: "Hill (Max: 1)",
+        update: "1.0",
+        imageIcon: "./Images/Units/frost_moon_icon.png",
+        image: "./Images/Units/frost_moon.png",
+        upgrades: {
+            1: { cost: 700, damage: 150, range: 30, cooldown: 5, aoe: "Circle", attackType: "Air"},
+            2: { cost: 1300, damage: 400, range: 30, cooldown: 5, aoe: "Circle", attackType: "Air"},
+            3: { cost: 2500, damage: 550, range: 35, cooldown: 5, aoe: "Circle", attackType: "Air"},
+            4: { cost: 3500, damage: 625, range: 37, cooldown: 5, aoe: "Circle", attackType: "Air"},
+            5: { cost: 3750, damage: 750, range: 45, cooldown: 6, aoe: "Circle", attackType: "Air"},
+            6: { cost: 4000, damage: 800, range: 50, cooldown: 6, aoe: "Circle", attackType: "Air"}
+        }
+    },
+    {
+        name: "Flame Pillar",
+        rarity: "Grade 5",
+        class: "Magician",
+        obtainment: "Banner",
+        placement: "Ground (Max: 1)",
+        update: "1.0",
+        imageIcon: "./Images/Units/frost_moon_icon.png",
+        image: "./Images/Units/frost_moon.png",
+        statsEffects: [
+            {
+                name: "Burn",
+                icon: "file path",
+                description: "Burn applies 3 damage ticks. Each tick deals damage equal to the unit base damage."
+            }
+        ],
+        upgrades: {
+            1: { cost: 750, damage: 80, range: 20, cooldown: 4, aoe: "Cone", attackType: "Ground/Burn"},
+            2: { cost: 1000, damage: 100, range: 20, cooldown: 4, aoe: "Cone", attackType: "Ground/Burn"},
+            3: { cost: 1500, damage: 140, range: 25, cooldown: 5, aoe: "Line", attackType: "Ground/Burn"},
+            4: { cost: 2250, damage: 170, range: 30, cooldown: 5, aoe: "Line", attackType: "Ground/Burn"},
+            5: { cost: 3250, damage: 235, range: 35, cooldown: 5, aoe: "Cone", attackType: "Ground/Burn"},
+            6: { cost: 5250, damage: 260, range: 40, cooldown: 5, aoe: "Cone", attackType: "Ground/Burn"}
+        }
+    },
+    {
+        name: "Mobu (100%)",
+        rarity: "Grade 5",
+        class: "Paladin",
+        obtainment: "Banner",
+        placement: "Ground (Max: 4)",
+        update: "1.0",
+        imageIcon: "./Images/Units/frost_moon_icon.png",
+        image: "./Images/Units/frost_moon.png",
+        upgrades: {
+            1: { cost: 250, damage: 90, range: 20, cooldown: 5, aoe: "Line", attackType: "Ground"},
+            2: { cost: 300, damage: 100, range: 23, cooldown: 5, aoe: "Line", attackType: "Ground"},
+            3: { cost: 450, damage: 130, range: 25, cooldown: 6, aoe: "Circle", attackType: "Ground"},
+            4: { cost: 500, damage: 170, range: 30, cooldown: 6, aoe: "Circle", attackType: "Ground"},
+            5: { cost: 1200, damage: 200, range: 35, cooldown: 8, aoe: "Circle", attackType: "Hybrid"},
+            6: { cost: 1800, damage: 250, range: 40, cooldown: 7, aoe: "Circle", attackType: "Hybrid"}
+        }
     },
 );
